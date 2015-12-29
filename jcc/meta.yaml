@@ -1,0 +1,41 @@
+package:
+  name: jcc
+  version: "2.21"
+
+source:
+  fn: JCC-2.21.tar.gz
+  url: https://pypi.python.org/packages/source/J/JCC/JCC-2.21.tar.gz#md5=18772811c1c9181e6f7512169828f840
+  md5: 18772811c1c9181e6f7512169828f840             # (optional)
+  #svn_url: http://svn.apache.org/repos/asf/lucene/pylucene/trunk/jcc
+  #svn_rev: 1565013
+  #svn_ignore_externals: yes # (defaults to no)
+
+  # Patches may optionally be applied to the source
+  patches:
+    - setup.patch    # Make windows type separators
+
+build:
+  number: 1
+
+  #has_prefix_files:
+  #  - lib/site-packages/jcc/config.py
+
+requirements:
+  build:
+    - python
+    #- setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - jcc
+
+about:
+  home: http://lucene.apache.org/pylucene/jcc/index.html
+  license: Apache Software License
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
