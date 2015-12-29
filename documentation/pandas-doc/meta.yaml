@@ -1,0 +1,23 @@
+package:
+  name: pandas-doc
+  version: '0.17.0'
+
+source:
+  fn: pandas.zip
+  url: http://pandas.pydata.org/pandas-docs/version/0.17.0/pandas.zip
+  md5: 087e836784875a850e6299e76517460e
+  patches:
+
+
+#build:
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://pandas.pydata.org
+  license: http://pandas.pydata.org/pandas-docs/stable/overview.html#license

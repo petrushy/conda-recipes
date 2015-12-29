@@ -1,0 +1,21 @@
+package:
+  name: numpy-doc
+  version: '1.9.1'
+
+source:
+  fn: numpy-html-1.9.1.zip
+  url: http://docs.scipy.org/doc/numpy-1.9.1/numpy-html-1.9.1.zip
+  patches:
+
+
+build:
+  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://docs.scipy.org
+  license:

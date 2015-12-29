@@ -1,0 +1,24 @@
+package:
+  name: scikit-image-doc
+  version: '0.11.x'
+
+source:
+  fn: docs-gh-pages.zip
+  url: https://codeload.github.com/scikit-image/docs/zip/gh-pages
+  md5: d1d67f66a6b3440c77096de805abe418
+  patches:
+
+
+#build:
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: https://github.com/scikit-image/docs/tree/gh-pages/0.11.x
+  license: http://scikit-image.org/docs/stable/license.html
+  

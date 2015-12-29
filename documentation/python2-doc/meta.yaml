@@ -1,0 +1,22 @@
+package:
+  name: python2-doc
+  version: '2.7.9'
+
+source:
+  fn: python-2.7.9-docs-html.zip
+  url: https://docs.python.org/2/archives/python-2.7.9-docs-html.zip
+  patches:
+
+
+build:
+  #noarch: True
+  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: https://docs.python.org/2/download.html
+  license: https://docs.python.org/2/license.html

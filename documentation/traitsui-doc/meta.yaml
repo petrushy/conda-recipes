@@ -1,0 +1,22 @@
+package:
+  name: traitsui-doc
+  version: '4.4.0'
+
+source:
+  #fn: traits-4.4.0.zip
+  #url:  https://github.com/enthought/traits/archive/4.4.0.zip
+  patches:
+
+
+#build:
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: https://pypi.python.org/pypi/traitsui
+  license: BSD

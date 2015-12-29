@@ -1,0 +1,20 @@
+package:
+  name: xlwings-doc
+  version: '0.3.6'
+
+source:
+  patches:
+
+
+#build:
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://docs.xlwings.org/en/latest/
+  license: http://opensource.org/licenses/BSD-3-Clause

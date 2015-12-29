@@ -1,0 +1,22 @@
+package:
+  name: numba-doc
+  version: "0.18.2"
+
+source:
+  #fn: sympy-0.7.5/sympy-docs-html-0.7.5.zip
+  #url: https://github.com/sympy/sympy/releases/download/sympy-0.7.5/sympy-docs-html-0.7.5.zip
+  patches:
+
+
+#build:
+#  noarch_python: True
+  #number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://numba.pydata.org/numba-doc/0.18.2/index.html
+  license:

@@ -1,0 +1,20 @@
+package:
+  name: sphinx-doc
+  version: '1.3.1'
+
+source:
+  patches:
+
+
+#build:
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://sphinx-doc.org/index.html
+  license:

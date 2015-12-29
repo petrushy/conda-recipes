@@ -1,0 +1,23 @@
+package:
+  name: scipy-lecture-notes-doc
+  version: "f32c035"
+
+source:
+  fn: scipy-lectures-scipy-lectures.github.com-f32c035.zip
+  url: https://github.com/scipy-lectures/scipy-lectures.github.com/zipball/master
+  #patches:
+
+
+build:
+  #noarch: True
+  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: https://scipy-lectures.github.io/
+  license: http://creativecommons.org/licenses/by/3.0/us
+

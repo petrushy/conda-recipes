@@ -1,0 +1,22 @@
+package:
+  name: sympy-doc
+  version: "0.7.6"
+
+source:
+  fn: sympy-0.7.6/sympy-docs-html-0.7.6.zip
+  url: https://github.com/sympy/sympy/releases/download/sympy-0.7.6/sympy-docs-html-0.7.6.zip
+  patches:
+
+
+build:
+  #noarch: True
+  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://sympy.org/en/index.html
+  license: http://docs.sympy.org/latest/aboutus.html#license

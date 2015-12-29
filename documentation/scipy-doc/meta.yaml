@@ -1,0 +1,21 @@
+package:
+  name: scipy-doc
+  version: '0.15.1'
+
+source:
+  fn: scipy-html-0.15.1.zip
+  url: http://docs.scipy.org/doc/scipy-0.15.1/scipy-html-0.15.1.zip
+  patches:
+
+
+build:
+  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://docs.scipy.org
+  license: http://www.scipy.org/scipylib/license.html

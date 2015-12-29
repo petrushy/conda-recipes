@@ -1,0 +1,22 @@
+package:
+  name: ipython-doc
+  version: '3.1'
+
+source:
+  #fn: sympy-0.7.5/sympy-docs-html-0.7.5.zip
+  #url: https://github.com/sympy/sympy/releases/download/sympy-0.7.5/sympy-docs-html-0.7.5.zip
+  patches:
+
+
+#build:
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://ipython.org/ipython-doc/3/
+  license:

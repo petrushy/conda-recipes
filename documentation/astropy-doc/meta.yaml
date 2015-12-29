@@ -1,0 +1,23 @@
+package:
+  name: astropy-doc
+  version: 1.0.5
+
+source:
+  #fn: sympy-0.7.5/sympy-docs-html-0.7.5.zip
+  #url: https://github.com/sympy/sympy/releases/download/sympy-0.7.5/sympy-docs-html-0.7.5.zip
+  patches:
+
+
+build:
+  #noarch_python: True
+#  noarch: True
+#  number: 0
+
+requirements:
+  build:
+
+  run:
+
+about:
+  home: http://docs.astropy.org/en/v1.0.5/
+  license:
