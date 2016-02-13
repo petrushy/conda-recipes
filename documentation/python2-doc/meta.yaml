@@ -1,10 +1,10 @@
 package:
   name: python2-doc
-  version: '2.7.9'
+  version: '2.7.11'
 
 source:
-  fn: python-2.7.9-docs-html.zip
-  url: https://docs.python.org/2/archives/python-2.7.9-docs-html.zip
+  fn: python-2.7.11-docs-html.zip
+  url: https://docs.python.org/2/archives/python-2.7.11-docs-html.zip
   patches:
 
 
