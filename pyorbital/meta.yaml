@@ -1,11 +1,11 @@
 package:
   name: pyorbital
-  version: "v0.3.2"
+  version: "1.0.1"
 
 source:
-  fn: pyorbital-v0.3.2.tar.gz
-  url: https://pypi.python.org/packages/source/p/pyorbital/pyorbital-v0.3.2.tar.gz
-  md5: 5f56e2cd06ceeaefa93df407b5a2d26a
+  fn: v1.0.1.zip
+  url: https://github.com/pytroll/pyorbital/archive/v1.0.1.zip
+  md5: acba12f638c6f7c5340b74534614caad
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -28,7 +28,7 @@ source:
 requirements:
   build:
     - python
-    - setuptools
+    #- setuptools
     - numpy
 
   run:
