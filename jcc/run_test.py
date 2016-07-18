@@ -2,11 +2,21 @@ import sys, os
 
 try:
     import jcc
-    jcc.initVM()
+    tmp = jcc.initVM()
     print ("JCC test OK")
+    print ('java version', tmp.java_version)
+    try:
+    	print ('JCC_JDK = ', os.environ['JCC_JDK'])
+    except:
+    	pass
 
 except:
     print ('JCC Error')
-    print ('JCC_JDK = ', os.environ['JCC_JDK'])
-    print ('PATH = ', os.environ['PATH'])
+    try:
+    	print ('JCC_JDK = ', os.environ['JCC_JDK'])
+    	print ('PATH = ', os.environ['PATH'])
+    except:
+    	pass
     raise
+
+sys.exit(0)
