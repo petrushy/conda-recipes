@@ -1,17 +1,16 @@
 package:
   name: pandas-doc
-  version: '0.18.1'
+  version: '0.21.1'
 
 source:
   fn: pandas.zip
-  url: http://pandas.pydata.org/pandas-docs/version/0.18.1/pandas.zip
-  md5: 60290b819c1a247b56eed31a2974dcfd
+  url: http://pandas.pydata.org/pandas-docs/version/0.21.1/pandas.zip
+  md5: b91937791464b17ad2213efc0ab0afe3
   patches:
 
 
-#build:
-#  noarch: True
-#  number: 0
+build:
+  noarch: generic
 
 requirements:
   build:
