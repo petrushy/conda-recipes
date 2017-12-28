@@ -1,5 +1,5 @@
 #!/bin/bash
-httrack http://docs.astropy.org/en/v1.0.5/
+httrack http://docs.astropy.org/en/stable/
 echo "Site copied"
 # copy documentation
 mkdir -p $PREFIX/doc/astropy
