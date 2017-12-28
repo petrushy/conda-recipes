@@ -1,20 +1,15 @@
 package:
   name: numpy-doc
-  version: '1.10.1'
+  version: '1.13.0'
 
 source:
-  fn: numpy-html-1.10.1.zip
-  url: http://docs.scipy.org/doc/numpy/numpy-html-1.10.1.zip
-  patches:
-
+  fn: numpy-html-1.13.0.zip
+  url: https://docs.scipy.org/doc/numpy/numpy-html-1.13.0.zip
+  md5: 9e3a32f4babcc269d45850615aedbe61
 
 build:
+  noarch: generic
   number: 0
-
-requirements:
-  build:
-
-  run:
 
 about:
   home: http://docs.scipy.org
