@@ -1,21 +1,15 @@
 package:
   name: scipy-lecture-notes-doc
-  version: "f32c035"
+  version: "2017.1"
 
 source:
-  fn: scipy-lectures-scipy-lectures.github.com-f32c035.zip
+  fn: sscipy-lectures-scipy-lectures.github.com-a07c1bb.zip
   url: https://github.com/scipy-lectures/scipy-lectures.github.com/zipball/master
-  #patches:
-
+  md5: 514d33578bc056afbaff987c065dc4da
 
 build:
-  #noarch: True
+  noarch: generic
   number: 0
-
-requirements:
-  build:
-
-  run:
 
 about:
   home: https://scipy-lectures.github.io/
