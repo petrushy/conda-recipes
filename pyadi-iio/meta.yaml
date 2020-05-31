@@ -6,27 +6,27 @@ package:
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 4a439282169e93c073a81004995960e255b247bcae14a3044ffaf6b2ee857e97
+  url: "https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz"
+  sha256: bad27a4a425837c43cf1eb623b2c015f4cfecc6dbe57b875fb4edf04c05b7e44
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   host:
     - numpy
     - pip
     - python
+
   run:
     - numpy
+    - libiio
     - python
 
 test:
   imports:
     - adi
-    - test
-    - test.rf
 
 about:
   home: "https://github.com/analogdevicesinc/pyadi-iio"
@@ -39,4 +39,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - your-github-id-here
+    - petrushy

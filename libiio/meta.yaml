@@ -15,6 +15,7 @@ build:
 requirements:
   build:
     - cmake
+    - python
     - git
     - make  # [unix]
     - backports.lzma  # [unix]
@@ -35,9 +36,10 @@ requirements:
     - zlib
     - backports.lzma  # [unix]
     - libxml2
+    - python
 
   run:
-    - curl
+    - python
 
 test:
   imports:
