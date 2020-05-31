@@ -1,0 +1,42 @@
+{% set name = "pyadi-iio" %}
+{% set version = "0.0.5" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 4a439282169e93c073a81004995960e255b247bcae14a3044ffaf6b2ee857e97
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - numpy
+    - pip
+    - python
+  run:
+    - numpy
+    - python
+
+test:
+  imports:
+    - adi
+    - test
+    - test.rf
+
+about:
+  home: "https://github.com/analogdevicesinc/pyadi-iio"
+  license: BSD
+  license_family: BSD
+  license_file: 
+  summary: "Interfaces to stream data from ADI hardware"
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here

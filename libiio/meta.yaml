@@ -1,0 +1,56 @@
+{% set name = "libiio" %}
+{% set version = "0.19" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz"
+  sha256: 81c414d5c47b715d9bc9275b9fabbfd9e9483e60c035f3001b5977932049595d
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - git
+    - make  # [unix]
+    - backports.lzma  # [unix]
+    - pkg-config  # [not win]
+    # Needed for tests: Bash shell not found; disabling shell script tests.
+    - posix  # [win]
+    - m2-m4  # [win]
+    - libxml2
+    - {{ compiler('c') }}
+    # not sure if we need cxx compiler here - seems to be presently disabled.
+    # - {{ compiler('cxx') }}
+    # not sure if we need fortran compiler here - seems to be presently disabled.
+    # - {{ compiler('fortran') }}
+  host:
+    - msinttypes  # [win and vc<14]
+    - bzip2
+    - libcurl
+    - zlib
+    - backports.lzma  # [unix]
+    - libxml2
+
+  run:
+    - curl
+
+test:
+  imports:
+    - iio
+
+
+about:
+  home: https://github.com/analogdevicesinc/libiio
+  # license: MIT
+  # license_file: COPYRIGHT
+  # summary: 'Libraries and data formats that support array-oriented scientific data.'
+
+extra:
+  recipe-maintainers:
+    - petrushy
+    
