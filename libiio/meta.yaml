@@ -16,24 +16,20 @@ requirements:
   build:
     - cmake
     - python
-    - git
     - make  # [unix]
     - backports.lzma  # [unix]
     - pkg-config  # [not win]
     # Needed for tests: Bash shell not found; disabling shell script tests.
-    - posix  # [win]
-    - m2-m4  # [win]
+    # - posix  # [win]
+    # - m2-m4  # [win]
     - libxml2
     - {{ compiler('c') }}
-    # not sure if we need cxx compiler here - seems to be presently disabled.
-    # - {{ compiler('cxx') }}
-    # not sure if we need fortran compiler here - seems to be presently disabled.
-    # - {{ compiler('fortran') }}
+
   host:
     - msinttypes  # [win and vc<14]
     - bzip2
-    - libcurl
-    - zlib
+    #- libcurl
+    #- zlib
     - backports.lzma  # [unix]
     - libxml2
     - python
@@ -45,12 +41,11 @@ test:
   imports:
     - iio
 
-
 about:
   home: https://github.com/analogdevicesinc/libiio
-  # license: MIT
-  # license_file: COPYRIGHT
-  # summary: 'Libraries and data formats that support array-oriented scientific data.'
+  license: LGPL
+  license_file: COPYRIGHT
+  summary: 'Library for interfacing with IIO devices.'
 
 extra:
   recipe-maintainers:

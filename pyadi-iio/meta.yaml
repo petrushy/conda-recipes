@@ -32,7 +32,7 @@ about:
   home: "https://github.com/analogdevicesinc/pyadi-iio"
   license: BSD
   license_family: BSD
-  license_file: 
+  license_file: LICENSE
   summary: "Interfaces to stream data from ADI hardware"
   doc_url: 
   dev_url: 
