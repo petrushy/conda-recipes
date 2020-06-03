@@ -1,0 +1,47 @@
+# Based on recipe by Ryan Volz Soapy-PlutoSDR
+
+{% set name = "soapysdr-module-remote" %}
+{% set version = "0.5.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://github.com/pothosware/SoapyRemote/archive/soapy-remote-{{ version }}.tar.gz
+  sha256: f325c5dde26fc8d7a82bd4e893b9aac445bb736679724728fc1dd2f0aef7b5f6
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('soapysdr-module-remote', max_pin='x.x') }}
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja  # [win]
+  host:
+    - soapysdr
+
+
+test:
+  commands:
+    # verify that libraries get installed
+    #- test -f $PREFIX/lib/SoapySDR/modules0.7/libPlutoSDRSupport.so  # [not win]
+    #- if not exist %PREFIX%\\Library\\lib\\SoapySDR\\modules0.7\\PlutoSDRSupport.dll exit 1  # [win]
+
+    # show info to see if module is detected
+    - SoapySDRUtil --info
+
+about:
+  home: https://github.com/pothosware/SoapyRemote/wiki
+  summary: 'Use any Soapy SDR remotely'
+  description:
+    
+  doc_url: https://github.com/pothosware/SoapyRemote/wiki
+  dev_url: https://github.com/pothosware/SoapyRemote
+
+extra:
+  recipe-maintainers:
+    - ryanXXX
