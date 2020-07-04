@@ -1,0 +1,52 @@
+{% set name = "libfec" %}
+{% set version = "2.1.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: 'https://github.com/quiet/libfec/archive/master.zip'
+  sha256: f741f0b599ece834422086d14ea3b16681742e88155e4c2bbaf177fd35a9c55e
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('libfec') }}
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    # - {{ cdt('libudev-devel') }}  # [linux]
+    - libtool  # [unix]
+    - cmake
+    - make  # [not win]
+    - ninja  # [win]
+  host:
+
+test:
+  commands:
+    - test -f $PREFIX/include/fec.h   # [unix]
+    - test -f $PREFIX/lib/libfec.so             # [unix]
+    #- test -f $PREFIX/lib/libusb-1.0${SHLIB_EXT}    # [unix]
+    - conda inspect linkages -p $PREFIX libfec      # [unix]
+    - conda inspect objects -p $PREFIX libfec       # [osx]
+
+    # Copied from https://github.com/ryanvolz/libusb-feedstock/blob/ac0acf5fab7a4ebdd32b0b5972f88f49bc815bf1/recipe/meta.yaml
+    #- if not exist %PREFIX%\\Library\\bin\\libusb-1.0.dll exit 1            # [win]
+    #- if not exist %PREFIX%\\Library\\lib\\libusb-1.0.lib exit 1            # [win]
+    #- if not exist %PREFIX%\\Library\\lib\\libusb-1.0.pdb exit 1            # [win]
+    #- if not exist %PREFIX%\\Library\\lib\\libusb-1.0_static.lib exit 1     # [win]
+    #- if not exist %PREFIX%\\Library\\include\\libusb-1.0\\libusb.h exit 1  # [win]
+
+about:
+  home: https://github.com/quiet/libfec
+  license: LGPL-2.1-or-later
+  license_file: lesser.txt
+  summary: 'forward error correction (FEC) algorithms'
+  dev_url: https://github.com/quiet/libfec
+
+extra:
+  recipe-maintainers:
+    - petrushy
