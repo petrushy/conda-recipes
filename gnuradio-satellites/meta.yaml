@@ -1,0 +1,80 @@
+{% set name = "gnuradio-satellites" %}
+{% set version = "3.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source: 
+  url: https://github.com/daniestevez/gr-satellites/archive/v{{ version }}.tar.gz
+  sha256: d13c386abaf2ddf9b558d16286eade2e61f3b754ce371c0edc0d626333a89463
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('gnuradio-satellites', max_pin='x.x') }}
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - make  # [not win]
+    - ninja  # [win]
+    - pkg-config  # [not win]
+    - libfec
+    - construct
+    - requests
+
+  host:
+    - boost-cpp
+    - gnuradio-core
+    - pip  # [win]
+    - python
+    - swig
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
+    - libfec
+    - construct
+    - requests
+    - volk
+
+  run:
+    - boost-cpp
+    - python
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
+    - libfec
+    - construct
+    - requests
+    - volk
+
+test:
+  commands:
+    # verify that (some) GRC blocks get installed
+    {% set blocks = [
+        "satellites_decode_rs",
+    ] %}
+
+    {% for block in blocks %}
+    - test -f $PREFIX/share/gnuradio/grc/blocks/{{ block }}.block.yml  # [not win]
+    - if not exist %PREFIX%\\Library\\share\\gnuradio\\grc\\blocks\\{{ block }}.block.yml exit 1  # [win]
+    {% endfor %}
+
+  imports:
+    - satellites
+
+about:
+  home: https://github.com/daniestevez/gr-satellites
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: 'A collection of decoders for Amateur satellites'
+  description: |
+    gr-satellites is a GNU Radio out-of-tree module with a collection of telemetry decoders for Amateur satellites.
+  doc_url: https://gr-satellites.readthedocs.io/en/latest/index.html
+  dev_url: https://github.com/daniestevez/gr-satellites
+
+extra:
+  recipe-maintainers:
+    - petrushy
