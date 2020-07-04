@@ -6,11 +6,12 @@ package:
   version: "{{ version }}"
 
 source:
-  url: "https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz"
-  sha256: bad27a4a425837c43cf1eb623b2c015f4cfecc6dbe57b875fb4edf04c05b7e44
+  # url: "https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz"
+  url: https://github.com/analogdevicesinc/pyadi-iio/archive/master.zip
+  #sha256: e6d40f07ecd1838a5b2609f6a74c130bbc0c6dfb67b6039ea6d61b21fe8b76bc
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
