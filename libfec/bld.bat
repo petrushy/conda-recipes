@@ -57,14 +57,14 @@ if not exist "%MSBUILD_CMD%" (
 if errorlevel 1 exit 1
 
 :: Install
-copy %SRC_DIR%\%SLN_PLAT%\Release\dll\libusb-1.0.dll %LIBRARY_BIN%\
+copy %SRC_DIR%\%SLN_PLAT%\Release\dll\libfec-1.0.dll %LIBRARY_BIN%\
 if errorlevel 1 exit 1
-copy %SRC_DIR%\%SLN_PLAT%\Release\dll\libusb-1.0.lib %LIBRARY_LIB%\
+copy %SRC_DIR%\%SLN_PLAT%\Release\dll\libfec-1.0.lib %LIBRARY_LIB%\
 if errorlevel 1 exit 1
-copy %SRC_DIR%\%SLN_PLAT%\Release\dll\libusb-1.0.pdb %LIBRARY_LIB%\
+copy %SRC_DIR%\%SLN_PLAT%\Release\dll\libfec-1.0.pdb %LIBRARY_LIB%\
 if errorlevel 1 exit 1
-copy %SRC_DIR%\%SLN_PLAT%\Release\lib\libusb-1.0.lib %LIBRARY_LIB%\libusb-1.0_static.lib
+copy %SRC_DIR%\%SLN_PLAT%\Release\lib\libfec-1.0.lib %LIBRARY_LIB%\libfec-1.0_static.lib
 if errorlevel 1 exit 1
-mkdir %LIBRARY_INC%\libusb-1.0
-copy %SRC_DIR%\libusb\libusb.h %LIBRARY_INC%\libusb-1.0\
+mkdir %LIBRARY_INC%\libfec-1.0
+copy %SRC_DIR%\libusb.h %LIBRARY_INC%\libfec-1.0\
 if errorlevel 1 exit 1
