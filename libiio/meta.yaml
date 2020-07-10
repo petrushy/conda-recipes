@@ -1,12 +1,13 @@
 {% set name = "libiio" %}
-{% set version = "0.19" %}
+{% set version = "0.20" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz"
+  # url: "https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz"
+  url: https://github.com/analogdevicesinc/libiio/archive/master.zip
   sha256: 81c414d5c47b715d9bc9275b9fabbfd9e9483e60c035f3001b5977932049595d
 
 build:
