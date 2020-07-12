@@ -42,6 +42,7 @@ requirements:
   run:
     - boost-cpp
     - python
+    - gnuradio-core
     # pulled in by gnuradio-core and linked against, so include explicitly
     - log4cpp
     - libfec
