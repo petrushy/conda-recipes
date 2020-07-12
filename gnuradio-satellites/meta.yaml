@@ -10,6 +10,7 @@ source:
   sha256: d13c386abaf2ddf9b558d16286eade2e61f3b754ce371c0edc0d626333a89463
 
 build:
+  skip: True  # [win]  libfec not available on windows
   number: 0
   run_exports:
     - {{ pin_subpackage('gnuradio-satellites', max_pin='x.x') }}
@@ -35,7 +36,7 @@ requirements:
     # pulled in by gnuradio-core and linked against, so include explicitly
     - log4cpp
     - libfec
-    - construct
+    - construct >=2.9
     - requests
     - volk
 
