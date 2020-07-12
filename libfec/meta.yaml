@@ -27,7 +27,8 @@ requirements:
 test:
   commands:
     - test -f $PREFIX/include/fec.h   # [unix]
-    - test -f $PREFIX/lib/libfec.so             # [unix]
+    - test -f $PREFIX/lib/libfec${SHLIB_EXT}             # [unix]
+    #- test -f $PREFIX/lib/libfec.3.0.0    # [osx]
     - conda inspect linkages -p $PREFIX libfec      # [unix]
     - conda inspect objects -p $PREFIX libfec       # [osx]
 
