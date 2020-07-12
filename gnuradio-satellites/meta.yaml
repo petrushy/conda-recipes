@@ -1,5 +1,5 @@
 {% set name = "gnuradio-satellites" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source: 
   url: https://github.com/daniestevez/gr-satellites/archive/v{{ version }}.tar.gz
-  sha256: d13c386abaf2ddf9b558d16286eade2e61f3b754ce371c0edc0d626333a89463
+  sha256: 238b221c70483de0890240507a22ea0a5b473a538b07f9c46745250067d7663f
 
 build:
   skip: True  # [win]  libfec not available on windows
