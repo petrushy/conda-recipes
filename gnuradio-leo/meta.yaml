@@ -9,7 +9,8 @@ source:
   #url: https://github.com/daniestevez/gr-satellites/archive/v{{ version }}.tar.gz
   #url: https://gitlab.com/librespacefoundation/gr-leo/-/archive/eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2/gr-leo-eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2.tar.gz
   git_url: https://gitlab.com/librespacefoundation/gr-leo.git
-  git_rev: 998458ea895877e9f9ea50526e3fecc384625b92
+  git_rev: eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2
+
   #sha256: 636167b9688a73c152576962b4855c8bdc89d1001b18400cb93efaaa6f5a47c6
 
 build:
