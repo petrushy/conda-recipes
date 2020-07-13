@@ -7,9 +7,10 @@ package:
 
 source: 
   #url: https://github.com/daniestevez/gr-satellites/archive/v{{ version }}.tar.gz
-  url: https://gitlab.com/librespacefoundation/gr-leo/-/archive/eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2/gr-leo-eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2.tar.gz
-
-  sha256: 636167b9688a73c152576962b4855c8bdc89d1001b18400cb93efaaa6f5a47c6
+  #url: https://gitlab.com/librespacefoundation/gr-leo/-/archive/eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2/gr-leo-eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2.tar.gz
+  git_url: https://gitlab.com/librespacefoundation/gr-leo.git
+  git_rev: 998458ea895877e9f9ea50526e3fecc384625b92
+  #sha256: 636167b9688a73c152576962b4855c8bdc89d1001b18400cb93efaaa6f5a47c6
 
 build:
   skip: True  # [win]  libfec not available on windows
@@ -38,6 +39,7 @@ requirements:
     - log4cpp
     - volk
     - mpir
+    - cysgp4
 
   run:
     - boost-cpp
@@ -47,6 +49,7 @@ requirements:
     - log4cpp
     - volk
     - mpir
+    - cysgp4
 
 test:
   commands:
@@ -71,7 +74,7 @@ about:
   summary: 'A GNU Radio space telecommunication simulator'
   description: |
     Gr-leo is a GNU Radio Out-of-Tree module that simulates the telecommunication channel between orbiting satellites and Ground Stations.
-  doc_url: https://gitlab.com/librespacefoundation/gr-leo
+  doc_url: https://gitlab.com/librespacefoundation/gr-leo/-/wikis/home
   dev_url: https://gitlab.com/librespacefoundation/gr-leo
 
 extra:
