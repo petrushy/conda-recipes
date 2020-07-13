@@ -1,5 +1,5 @@
 {% set name = "gnuradio-leo" %}
-{% set version = "1.0.0.dev" %}
+{% set version = "1.0.dev1" %}
 
 package:
   name: {{ name|lower }}
