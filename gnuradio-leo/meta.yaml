@@ -1,0 +1,76 @@
+{% set name = "gnuradio-leo" %}
+{% set version = "1.0.0.dev" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source: 
+  #url: https://github.com/daniestevez/gr-satellites/archive/v{{ version }}.tar.gz
+  url: https://gitlab.com/librespacefoundation/gr-leo/-/archive/eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2/gr-leo-eb9e1d8fdaa08cfd192159a7968f2d64d56b9fe2.tar.gz
+
+  sha256: 238b221c70483de0890240507a22ea0a5b473a538b07f9c46745250067d7663f
+
+build:
+  skip: True  # [win]  libfec not available on windows
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('gnuradio-leo', max_pin='x.x') }}
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - make  # [not win]
+    - ninja  # [win]
+    - pkg-config  # [not win]
+    - requests
+
+  host:
+    - boost-cpp
+    - gnuradio-core >=3.8
+    - pip  # [win]
+    - python
+    - swig
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
+    - volk
+
+  run:
+    - boost-cpp
+    - python
+    - gnuradio-core >=3.8
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
+    - volk
+
+test:
+  commands:
+    # verify that (some) GRC blocks get installed
+    {% set blocks = [
+        "leo_channel_model",
+    ] %}
+
+    {% for block in blocks %}
+    - test -f $PREFIX/share/gnuradio/grc/blocks/{{ block }}.block.yml  # [not win]
+    - if not exist %PREFIX%\\Library\\share\\gnuradio\\grc\\blocks\\{{ block }}.block.yml exit 1  # [win]
+    {% endfor %}
+
+  imports:
+    - leo
+
+about:
+  home: https://gitlab.com/librespacefoundation/gr-leo
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: 'A GNU Radio space telecommunication simulator'
+  description: |
+    Gr-leo is a GNU Radio Out-of-Tree module that simulates the telecommunication channel between orbiting satellites and Ground Stations.
+  doc_url: https://gitlab.com/librespacefoundation/gr-leo
+  dev_url: https://gitlab.com/librespacefoundation/gr-leo
+
+extra:
+  recipe-maintainers:
+    - petrushy
