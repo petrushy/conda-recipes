@@ -1,5 +1,5 @@
 {% set name = "gnuradio-satellites" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source: 
   url: https://github.com/daniestevez/gr-satellites/archive/v{{ version }}.tar.gz
-  sha256: 238b221c70483de0890240507a22ea0a5b473a538b07f9c46745250067d7663f
+  sha256: 709394157b53164c27d3f9176aae84fe66f65b9e8bec06c780f6446073bdd67f
 
 build:
   skip: True  # [win]  libfec not available on windows
@@ -56,6 +56,8 @@ test:
     # verify that (some) GRC blocks get installed
     {% set blocks = [
         "satellites_decode_rs",
+        "satellites_ax100_decode",
+        "satellites_check_crc",
     ] %}
 
     {% for block in blocks %}
