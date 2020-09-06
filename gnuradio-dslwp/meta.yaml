@@ -1,0 +1,78 @@
+{% set name = "gnuradio-dslwp" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source: 
+  url: "https://github.com/daniestevez/gr-dslwp/archive/maint38.zip"
+  sha256: 2d2a5863d37deceb305ad5675983e288390e163f9703730c8b265f66fc734b07
+
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('gnuradio-dslwp', max_pin='x.x') }}
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - make  # [not win]
+    - ninja  # [win]
+    - pkg-config  # [not win]
+    - construct
+    - requests
+
+  host:
+    - boost-cpp
+    - gnuradio-core
+    - pip  # [win]
+    - python
+    - swig
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
+    - construct >=2.9
+    - requests
+    - volk
+
+  run:
+    - boost-cpp
+    - python
+    - gnuradio-core
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
+    - construct
+    - requests
+    - volk
+
+test:
+  commands:
+    # verify that (some) GRC blocks get installed
+    {% set blocks = [
+        "dslwp_attach_sync_marker",
+    ] %}
+
+    {% for block in blocks %}
+    - test -f $PREFIX/share/gnuradio/grc/blocks/{{ block }}.block.yml  # [not win]
+    - if not exist %PREFIX%\\Library\\share\\gnuradio\\grc\\blocks\\{{ block }}.block.yml exit 1  # [win]
+    {% endfor %}
+
+  imports:
+    - dslwp
+
+about:
+  home: https://github.com/daniestevez/gr-dslwp
+  # license: GPL-3.0-or-later
+  # license_family: GPL
+  # license_file: LICENSE
+  summary: 'module for DSLWP'
+  description: |
+    GNU Radio OOT Module for DSLWP, a lunar formation flying mission consists of 2 microsatellites.
+  dev_url: https://github.com/daniestevez/gr-dslwp
+
+extra:
+  recipe-maintainers:
+    - petrushy
